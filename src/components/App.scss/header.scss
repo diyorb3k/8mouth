@@ -1,0 +1,135 @@
+.container {
+  max-width: 1180px;
+  width: 100%;
+  padding: 0px 20px;
+//   border: 1px solid red;
+  margin: 0 auto;
+}
+// NAVBAR
+.navbar1{
+    display: flex;
+    align-items:center ;
+    justify-content: space-between;
+}
+.navbar2 {
+  display: flex;
+  padding-bottom: 1rem;
+  padding-top: 5px;
+    justify-content: space-between;
+  gap: 19px;
+  align-items: center;
+}
+
+.menu {
+  width: 24px;
+  height: 24px;
+}
+.mnbt {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  border: none;
+  background-color: #ffbe1f;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 550;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.corzinka {
+  width: 24px;
+  height: auto;
+}
+input {
+  padding-bottom: 0.625rem;
+  padding-top: 0.625rem;
+  width: 398px;
+  font-size: 14px;
+  line-height: 20px;
+  padding-left: 12px;
+  //   border-color: #ffbe1f !important;
+  border-top-color: 0;
+  border-radius: 0.375rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 2px solid #ffbe1f;
+  outline: none;
+  //   border: none;
+}
+
+.inputbtn {
+  display: flex;
+  button {
+    cursor: pointer;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #ffbe1f;
+    padding-bottom: 0.5rem !important;
+    padding-top: 0.5rem !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    .seach {
+      width: 24px;
+      height: 24px;
+      padding-left: 3px;
+      padding-right: 3px;
+    }
+  }
+}
+.corsinkagrup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    margin-top: -3px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #505c6a;
+  }
+}
+.NAVBARLIN {
+  // align-items: center;
+  display: flex;
+  gap: 17px;
+  button {
+    background-color: #fff;
+    outline: none;
+    border-width: 2px;
+    border-radius: 0.5rem;
+    --tw-border-opacity: 1;
+    border: 2px solid #ffbe1f;
+    // border-color: rgb(255 190 31 );
+    transition-duration: 0.2s;
+    font-size: 14px;
+    line-height: 20px;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    padding-left: 0.89rem;
+    padding-right: 0.89rem;
+    font-weight: 550;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #e2bd5f;
+  }
+}
+.lang {
+  display: flex;
+  .rus {
+    color: #505c6a;
+    cursor: pointer;
+  }
+  .uzb {
+    color: #a5b1bb;
+    cursor: pointer;
+  }
+}
