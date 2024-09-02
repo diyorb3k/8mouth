@@ -1,0 +1,70 @@
+.container {
+  max-width: 1190px;
+  width: 100%;
+  padding: 0px 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+footer {
+  background-color: #24272c;
+  margin-top: 30px;
+  padding-bottom: 40px;
+
+}
+.foterdev {
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+.econka {
+  flex-direction: column;
+  display: flex;
+  .item {
+    display: flex;
+    margin-top: 10px;
+  }
+}
+.alishof{
+    padding-top: 40px;
+}
+h4 {
+  color: #5d6d7d;
+}
+hr{
+    color: #5d6d7d;
+    background-color: #5d6d7d;
+}
+li {
+  color: #fff;
+  display: inline;
+}
+ul {
+    margin-top: 10px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.shop{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.xizmat{
+    padding-top: 23px;
+}
+:link:hover{
+    color:#ffbe1f;
+}
+li:hover{
+    color:#ffbe1f;
+
+}

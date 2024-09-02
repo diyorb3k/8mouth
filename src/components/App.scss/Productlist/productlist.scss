@@ -1,0 +1,18 @@
+.container {
+    max-width: 1190px;
+    width: 100%;
+    padding: 0px 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+.product{
+display: flex;
+flex-wrap: wrap;
+}
+.cartlar{
+  padding-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

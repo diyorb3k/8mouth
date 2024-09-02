@@ -1,0 +1,190 @@
+.container {
+  max-width: 1190px;
+  width: 100%;
+  padding: 0px 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.cart {
+  width: 150px;
+  height: 80%;
+  padding: 20px;
+  flex-basis: 30%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  margin: 10px;
+}
+.img_data {
+  width: 150px;
+  height: 70px;
+  height: 300px;
+  object-fit: contain;
+}
+.datada {
+  display: flex;
+}
+.product-card {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.06);
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 250px;
+  margin: 10px;
+  margin: 0 auto;
+  margin-top: 20px;
+  z-index: 0;
+}
+
+.product-image > img {
+  width: 160px;
+  height: 140px;
+  padding-left: 60px;
+  z-index: 0;
+}
+
+.product-details {
+  padding: 10px;
+}
+
+.product-title {
+  font-size: 12px;
+  font-weight: bold;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  height: 20px;
+  overflow: hidden;
+}
+
+.product-description {
+  font-size: 14px;
+  color: #666;
+}
+
+.product-price {
+  display: flex;
+  align-items: center;
+}
+
+.price-label {
+  font-weight: bold;
+}
+
+.price-value {
+  color: #007bff;
+}
+
+.add-to-cart-button {
+  align-items: center;
+  color: black;
+  display: flex;
+  background-color: #ffbe1f;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  font-size: 14px;
+  line-height: 20px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-weight: 550;
+  border-radius: 6px;
+}
+.product-card {
+  position: relative;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  background-color: #fff;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.12), 0px 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.product-card img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.product-card .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+}
+
+.product-card .price {
+  font-size: 1.1rem;
+  color: #888;
+  margin-top: 5px;
+}
+
+.product-card .description {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Like ikonasi uchun CSS */
+.product-card .like-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  color: #ff4757;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.product-card .like-icon:hover {
+  color: #ff6b81 !important;
+}
+.like-icon {
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &.liked {
+   background-color: red;
+   overflow: hidden;
+  }
+}
+.like-icon {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &.liked {
+    background-color: red; /* Fills the heart's background */
+    border-radius: 50%; /* Keeps the circular shape of the heart */
+  }
+
+  /* Ensures that the stroke remains the same color */
+}
+.product-card{
+  display: flex;
+}
+.datapro{
+  display: flex;
+}

@@ -1,27 +1,45 @@
 "use client";
-import useProductStore from "@/store/productStore";
-import { useEffect } from "react";
-import ProductCard from "./ProductCard";
+import React, { useEffect, useState } from 'react';
+import '../App.scss/Productlist/productlist.scss';
+import { ProductType } from "@/types/product.types";
+import ProductCard from './ProductCard'; // ProductCard komponentini import qilish
 
 const ProductList = () => {
-  const { loading, products, error, fetchProducts } = useProductStore();
+  const [products, setProducts] = useState<ProductType[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('https://fakestoreapi.com/products'); // API manzilingiz
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data: ProductType[] = await response.json();
+        setProducts(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchProducts();
   }, []);
 
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
   return (
-    <div>
-      {loading && <h1>Loading...</h1>}
-      {(error as Error) && <h3>{(error as Error).message}</h3>}
-      {products.length > 0 && (
-        <div className="flex flex-wrap gap-10 justify-center">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      )}
+    <div className="container">
+     <div className='cartlar'>
+     {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
+      ))}
+     </div>
     </div>
   );
 };
+
 export default ProductList;

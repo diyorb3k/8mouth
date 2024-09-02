@@ -3,6 +3,8 @@ import { IoMenu } from "react-icons/io5";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
+import Link from "next/link";
+
 
 
 const Header = () => {
@@ -36,10 +38,10 @@ const Header = () => {
           <MdOutlineShoppingCart className="corzinka" />
           <p>Savat</p>
         </div>
-        <div className="corsinkagrup">
+       <Link href='../components/products/Cart.tsx'> <div className="corsinkagrup">
           <IoMdHeartEmpty className="corzinka" />
           <p>Saralanganlar</p>
-        </div>
+        </div></Link>
         <button>Kirish</button>
         <div className="lang">
        <p className="rus"> РУС/</p> <p className="uzb">UZB</p>

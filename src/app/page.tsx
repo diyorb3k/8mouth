@@ -1,10 +1,14 @@
-import { ProductType } from "@/types/product.types";
-type ProductCardProps = {
-  product: ProductType;
-}
-const Hom  = ({product}:ProductCardProps) => {
+import Swaper from "@/components/Swaper/Swaper"
+import ProductCard from "@/components/products/ProductCard"
+import ProductList from "@/components/products/ProductList"
+// import ProductList from "@/components/products/ProductList"
+
+const page = () => {
   return (
-    <div>Hom page</div>
+    <div>
+        <Swaper/>
+        <ProductList/>
+    </div>
   )
 }
-export default Hom
+export default page
