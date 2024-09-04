@@ -3,12 +3,16 @@ import React, { useEffect, useState } from 'react';
 import '../App.scss/Productlist/productlist.scss';
 import { ProductType } from "@/types/product.types";
 import ProductCard from './ProductCard'; // ProductCard komponentini import qilish
-
 const ProductList = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+// limn
 
+
+
+
+// limk
   useEffect(() => {
     const fetchProducts = async () => {
       try {
