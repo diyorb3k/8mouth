@@ -14,64 +14,97 @@ const Footer = () => {
         <div className="foterdev">
           <ul>
             <h4>Hujjatlar</h4>
-            <Link href={"/"}><li key="1">Sotish uchun umumiy shartlar</li></Link>            
-            <Link href={"/"}><li key="2">Ofertalar arxivi</li></Link>
-            <Link href={"/"}>  <li key="3">Nizom</li></Link>
-            <Link href={"/"}> <li key="4">Guvohnoma</li></Link>
+            <li>
+              <Link href={"/"}>Sotish uchun umumiy shartlar</Link>
+            </li>
+            <li>
+              <Link href={"/"}>Ofertalar arxivi</Link>
+            </li>
+            <li>
+              <Link href={"/"}>Nizom</Link>
+            </li>
+            <li>
+              <Link href={"/"}>Guvohnoma</Link>
+            </li>
           </ul>
           <ul>
             <h4>Servis</h4>
-          <Link href={"/"}><li key="5">Namoz vaqti</li></Link>
-          <Link href={"/"}> <li key="6">Muddatli to'lov islomda</li></Link>
-          <Link href={"/"}> <li key="7">alif shopda soting!</li></Link>
-          <Link href={"/"}> <li key="8">Qaytarish</li></Link>
+            <li>
+              <Link href={"/"}>Namoz vaqti</Link>
+            </li>
+            <li>
+              <Link href={"/"}>Muddatli to&apos;lov islomda</Link>
+            </li>
+            <li>
+              <Link href={"/"}>Alif shopda soting!</Link>
+            </li>
+            <li>
+              <Link href={"/"}>Qaytarish</Link>
+            </li>
           </ul>
           <ul>
             <h4>Tovarlar katalogi</h4>
-            <Link href={"/"}><li key="9">Smartfonlar va telefonlar</li></Link>
-            <Link href={"/"}><li key="10">Gadjetlar</li></Link>
-            <Link href={"/"}> <li key="11">Smartfonlar uchun aksessuarlar</li></Link>
-            <Link href={"/"}><li key="12">Tegishli tovarlar</li></Link>
-            <Link href={"/"}><li key="13">Soat va aksessuarlar</li></Link>
+            <li>
+              <Link href={"/"}>Smartfonlar va telefonlar</Link>
+            </li>
+            <li>
+              <Link href={"/"}>Gadjetlar</Link>
+            </li>
+            <li>
+              <Link href={"/"}>Smartfonlar uchun aksessuarlar</Link>
+            </li>
+            <li>
+              <Link href={"/"}>Tegishli tovarlar</Link>
+            </li>
+            <li>
+              <Link href={"/"}>Soat va aksessuarlar</Link>
+            </li>
           </ul>
           <div className="econka">
             <div>
               <h4>Biz ijtimoiy axborot vositalarida</h4>
             </div>
             <div className="item">
-              <li key="14">
-               <Link href="https://www.instagram.com/alifshop_uz"> <Image src={instagram} alt="Instagram" width={40} height={40} /></Link>
+              <li>
+                <Link href="https://www.instagram.com/alifshop_uz">
+                  <Image src={instagram} alt="Instagram" width={40} height={40} />
+                </Link>
               </li>
-              <li key="15">
-         <Link href="https://facebook.com"><Image src={facebook} alt="Facebook" width={40} height={40} /></Link>
+              <li>
+                <Link href="https://facebook.com">
+                  <Image src={facebook} alt="Facebook" width={40} height={40} />
+                </Link>
               </li>
-              <li key="16">
-           <Link href="https://t.me/alifazobot"> <Image src={telegram} alt="Telegram" width={40} height={40} /></Link>
+              <li>
+                <Link href="https://t.me/alifazobot">
+                  <Image src={telegram} alt="Telegram" width={40} height={40} />
+                </Link>
               </li>
-              <li key="17">
-               <Link href="ok.uz"><Image src={OK} alt="Odnoklassniki" width={40} height={40} /></Link>
+              <li>
+                <Link href="https://ok.uz">
+                  <Image src={OK} alt="Odnoklassniki" width={40} height={40} />
+                </Link>
               </li>
-              <li key="18">
+              <li>
                 <Link href="https://tik-tok.com">
-                <Image src={tiktok} alt="TikTok" width={40} height={40} />
+                  <Image src={tiktok} alt="TikTok" width={40} height={40} />
                 </Link>
               </li>
             </div>
             <div className="shop">
               <h4 className="xizmat">Axborot xizmati</h4>
-            <li key={"21"}>
-              <Link href="href=https://www.instagram.com/alifshop_uz">  @alifshop_uz </Link>
-            </li>
-              <li key="20">
+              <li>
+                <Link href="https://www.instagram.com/alifshop_uz">@alifshop_uz</Link>
+              </li>
+              <li>
                 <Link href="tel:+998555121212">+998 555 12 12 12</Link>
               </li>
             </div>
           </div>
         </div>
-    <hr />
-    <h4 className="alishof">2024 © alifshop.uz</h4>
+        <hr />
+        <h4 className="alishof">2024 © alifshop.uz</h4>
       </div>
-
     </footer>
   );
 };

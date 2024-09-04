@@ -22,7 +22,7 @@ const ProductList = () => {
         }
         const data: ProductType[] = await response.json();
         setProducts(data);
-      } catch (error) {
+      } catch (error :any) {
         setError(error.message);
       } finally {
         setLoading(false);

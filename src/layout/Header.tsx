@@ -1,9 +1,10 @@
-import "../components/App.scss/header.scss"; // CSS faylini import qilish
+import "../components/App.scss/header.scss"; 
 import { IoMenu } from "react-icons/io5";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 import Link from "next/link";
+import Image from "next/image";
 
 
 
@@ -13,7 +14,7 @@ const Header = () => {
       <div className="navbar1">
         {/* NAVBAR-LEFT */}
        <div  className="navbar2">
-       <img
+       <Image
           src="https://alifshop.uz/_ipx/s_113x32/images/alifshop-logo.svg" // Rasm URL manzili
           alt="Alishof Logo"
           max-width={100}
