@@ -2,18 +2,17 @@
   import { ProductType } from "@/types/product.types";
   import { FaShoppingCart } from 'react-icons/fa'; 
   import "../App.scss/Productcart/productcart.scss";
-import Image from "next/image";
 
   type ProductCardProps = {
     product: ProductType;
   };
 
-  const ProductCard = ({ product }: ProductCardProps) => {
+  const ProductCard = ({ product  }: ProductCardProps) => {
     return (
      <div className="datapro">
        <div className="product-card">
         <div className="product-image">
-          <Image src={product.image} alt={product.title} />
+          <img src={product.image} alt={product.title} />
         </div>
         <div className="product-details">
           <h2 className="product-title">{product.title}</h2>
