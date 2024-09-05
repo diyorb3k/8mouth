@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import '../App.scss/Productlist/productlist.scss';
 import { ProductType } from "@/types/product.types";
 import ProductCard from './ProductCard'; // ProductCard komponentini import qilish
+import { log } from 'console';
 const ProductList = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -28,9 +29,12 @@ const ProductList = () => {
         setLoading(false);
       }
     };
+  
 
     fetchProducts();
   }, []);
+  // console.log(salom);
+  
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
