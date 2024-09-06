@@ -7,7 +7,7 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
 import SearchInput from '../components/SearchInput';
-import Modal from "../components/Modal"; // Import the modal component
+import Modal from "../components/Modal"; 
 
 interface HeaderProps {
   searchTerm: string;
@@ -15,9 +15,8 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
-  // Function to toggle modal visibility
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
@@ -37,7 +36,6 @@ const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm }) => {
             Tovarlar katalogi
           </button>
 
-          {/* Search input */}
           <SearchInput 
             searchTerm={searchTerm} 
             setSearchTerm={setSearchTerm} 
@@ -45,10 +43,13 @@ const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm }) => {
         </div>
 
         <div className="NAVBARLIN">
-          <div className="corsinkagrup">
-            <MdOutlineShoppingCart className="corzinka" />
-            <p>Savat</p>
-          </div>
+          <Link href="/cart"> 
+            <div className="corsinkagrup">
+              <MdOutlineShoppingCart className="corzinka" />
+              <p>Savat</p>
+            </div>
+          </Link>
+          
           <Link href="/products/Cart"> 
             <div className="corsinkagrup">
               <IoMdHeartEmpty className="corzinka" />
@@ -63,12 +64,10 @@ const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm }) => {
         </div>
       </div>
 
-      {/* Modal Component */}
       {isModalOpen && (
-        <Modal closeModal={toggleModal}> {/* Passing function to close modal */}
+        <Modal closeModal={toggleModal}> 
           <h2 className="text-lg font-bold">Tovarlar Katalogi</h2>
           <p>Bu yerda tovarlarning katalogi bo'ladi.</p>
-          {/* You can add more content here */}
         </Modal>
       )}
     </div>

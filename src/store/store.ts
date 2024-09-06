@@ -1,12 +1,20 @@
-// store.ts
 import create from 'zustand';
+import { ProductType } from "@/types/product.types"; // Import your ProductType if needed
 
-interface SearchStore {
+interface Store {
   searchTerm: string;
   setSearchTerm: (term: string) => void;
+  cart: ProductType[];
+  addToCart: (product: ProductType) => void;
 }
 
-export const useSearchStore = create<SearchStore>((set) => ({
+export const useStore = create<Store>((set) => ({
+  // Search functionality
   searchTerm: '',
-  setSearchTerm: (term) => set({ searchTerm: term }),
+  setSearchTerm: (term: string) => set({ searchTerm: term }),
+
+  // Cart functionality
+  cart: [],
+  addToCart: (product: ProductType) =>
+    set((state) => ({ cart: [...state.cart, product] })),
 }));

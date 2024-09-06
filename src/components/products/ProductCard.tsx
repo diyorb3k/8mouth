@@ -1,16 +1,24 @@
-  "use client";
-  import { ProductType } from "@/types/product.types";
-  import { FaShoppingCart } from 'react-icons/fa'; 
-  import "../App.scss/Productcart/productcart.scss";
+"use client";
+import { ProductType } from "@/types/product.types";
+import { FaShoppingCart } from 'react-icons/fa'; 
+import "../App.scss/Productcart/productcart.scss";
+import { useStore } from '@/store/store'; 
+import Link from 'next/link'; 
 
-  type ProductCardProps = {
-    product: ProductType;
+type ProductCardProps = {
+  product: ProductType;
+};
+
+const ProductCard = ({ product }: ProductCardProps) => {
+  const { addToCart } = useStore();
+
+  const handleAddToCart = () => {
+    addToCart(product); 
   };
 
-  const ProductCard = ({ product  }: ProductCardProps) => {
-    return (
-     <div className="datapro">
-       <div className="product-card">
+  return (
+    <div className="datapro">
+      <div className="product-card">
         <div className="product-image">
           <img src={product.images} alt={product.title} />
         </div>
@@ -19,11 +27,16 @@
           <div className="product-price">
             <span className="price-value">${product.price}</span>
           </div>
-          <button className="add-to-cart-button "><FaShoppingCart/> savatga</button>
+
+          <Link href="/products/Cart">
+            <button className="add-to-cart-button" onClick={handleAddToCart}>
+              <FaShoppingCart /> Savatga
+            </button>
+          </Link>
         </div>
       </div>
-     </div>
-    );                                                      
-  };
+    </div>
+  );
+};
 
-  export default ProductCard;
+export default ProductCard;

@@ -1,11 +1,11 @@
 import React from 'react';
-import { useSearchStore } from '@/store/store'; 
+import { useStore } from '@/store/store'; // Update to useStore
 
 const SearchInput: React.FC = () => {
-  const { setSearchTerm } = useSearchStore(); 
+  const { setSearchTerm } = useStore(); // Get the setSearchTerm function from the store
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value); 
+    setSearchTerm(event.target.value); // Update the search term in the store
   };
 
   return (

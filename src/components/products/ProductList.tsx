@@ -3,15 +3,14 @@ import React, { useEffect, useState } from 'react';
 import { ProductType } from "@/types/product.types";
 import ProductCard from './ProductCard'; 
 import '../App.scss/Productlist/productlist.scss';
-import { useSearchStore } from '@/store/store'; 
+import SearchInput from '../SearchInput';
+import { useStore } from '@/store/store'; 
 
 const ProductList: React.FC = () => {
-  const { searchTerm } = useSearchStore(); 
+  const { searchTerm } = useStore(); 
   const [products, setProducts] = useState<ProductType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-
-  console.log(products);
 
   useEffect(() => {
     const fetchProducts = async () => {
