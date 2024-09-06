@@ -3,26 +3,25 @@ import React, { useEffect, useState } from 'react';
 import { ProductType } from "@/types/product.types";
 import ProductCard from './ProductCard'; 
 import '../App.scss/Productlist/productlist.scss';
+import { useSearchStore } from '@/store/store'; 
 
-interface ProductListProps {
-  searchTerm: string;
-  setSearchTerm: (term: string) => void;
-}
-
-const ProductList: React.FC<ProductListProps> = ({ searchTerm }) => {
+const ProductList: React.FC = () => {
+  const { searchTerm } = useSearchStore(); 
   const [products, setProducts] = useState<ProductType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
+  console.log(products);
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('https://dummyjson.com/products');
+        const response = await fetch(`https://dummyjson.com/products`);
         if (!response.ok) {
           throw new Error('Failed to fetch products');
         }
         const data = await response.json();
-        setProducts(data.products); // Get the products array
+        setProducts(data.products);
       } catch (error: any) {
         setError(error.message);
       } finally {
@@ -33,7 +32,7 @@ const ProductList: React.FC<ProductListProps> = ({ searchTerm }) => {
     fetchProducts();
   }, []);
 
-  const filteredProducts = products.filter((product) =>
+  const filteredProducts = products?.filter((product) =>
     searchTerm && product.title
       ? product.title.toLowerCase().includes(searchTerm.toLowerCase())
       : true
@@ -45,7 +44,7 @@ const ProductList: React.FC<ProductListProps> = ({ searchTerm }) => {
   return (
     <div className="container">
       <div className="cartlar">
-        {filteredProducts.length > 0 ? (
+        {filteredProducts?.length > 0 ? (
           filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))
