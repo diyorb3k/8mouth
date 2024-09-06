@@ -1,6 +1,7 @@
 // Modal.tsx
 
-import './App.scss/Modal.scss'
+import Link from "next/link";
+import "./App.scss/Modal.scss";
 
 import React from "react";
 
@@ -27,26 +28,40 @@ const Modal: React.FC<ModalProps> = ({ closeModal, children }) => {
         </button>
         {children}
       </div>
-      
-        <li className="li_etim   mt-10">smartfonlar va Aksuarla</li>
-        <p>Noutboklar,kompyuterlar</p>
-        <p>Tv proiktlar</p>
-        <p>Audio texnikalar</p>
-        <p>Transport</p>
-        <ul>uy uchun texnika</ul>
-    
 
-      <li>Oshxona uchun texnika</li>
-      <li>Guzalik va sog'lik</li>
-      <li>Aqiliy uy</li>
-      <li>uyin uchun texnika</li>
-      <li>Sport va tavorlar</li>
-      <li>Avtotavorlar</li>
-      <li>Asboblar va bog' texnikasi</li>
-      <li>Bolalar buyumlari</li>
-      <li>Qurulish va tamirlash</li>
+     <div className="li_grup">
+     <li className="li_etim   mt-10">smartfonlar va Aksuarla</li>
    
+      <Link href={'/'}><li>Noutboklar,kompyuterlar</li></Link>
+      <Link href={'/'}>      <li>Tv proiktlar</li></Link>
+      <Link href={'/'}><li>Audio texnikalar</li></Link>
+      <Link href={'/'}><li>Transport</li></Link>
+      <Link href={'/'}> <li>uy uchun texnika</li></Link>
+      <Link href={'/'}><li>Oshxona uchun texnika</li></Link>
+      <Link href={'/'}> <li>Guzalik va sog'lik</li></Link>
+      <Link href={'/'}> <li>Aqiliy uy</li></Link>
+      <Link href={'/'}><li>uyin uchun texnika</li></Link>
+      <Link href={'/'}> <li>Sport va tavorlar</li></Link>
+      <Link href={'/'}>  <li>Avtotavorlar</li></Link>
+      <Link href={'/'}><li>Asboblar va bog' texnikasi</li></Link>
+      <Link href={'/'}> <li>Bolalar buyumlari</li></Link>
+      <Link href={'/'}><li>Qurulish va tamirlash</li></Link>
+
+
+
+      
+      
      
+      
+     
+     
+      
+     
+    
+      
+     
+      
+     </div>
     </div>
   );
 };
