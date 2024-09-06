@@ -1,36 +1,49 @@
+"use client";
 import "../components/App.scss/header.scss"; 
+import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoMdHeartEmpty } from "react-icons/io";
-import { IoSearch } from "react-icons/io5";
 import Link from "next/link";
 import Image from "next/image";
+import SearchInput from '../components/SearchInput';
+import Modal from "../components/Modal"; // Import the modal component
 
-const Header = () => {
+interface HeaderProps {
+  searchTerm: string;
+  setSearchTerm: (term: string) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
+
+  // Function to toggle modal visibility
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
     <div className="container">
       <div className="navbar1">
-        {/* NAVBAR-LEFT */}
         <div className="navbar2">
           <Image
-            src="https://alifshop.uz/_ipx/s_113x32/images/alifshop-logo.svg" // Rasm URL manzili
-            alt="Alishof Logo"
-            width={100} // Kenglik
-            height={50} // Balandlik
+            src="https://alifshop.uz/_ipx/s_113x32/images/alifshop-logo.svg"
+            alt="Alifshop Logo"
+            width={100}
+            height={50}
           />
-          <button className="mnbt">
+          <button className="mnbt" onClick={toggleModal}> {/* Button to toggle modal */}
             <IoMenu className="menu" />
             Tovarlar katalogi
           </button>
-          <div className="inputbtn">
-            <input type="text" placeholder="Tovarlarni izlash" />
-            <button>
-              <IoSearch className="seach" />
-            </button>
-          </div>
+
+          {/* Search input */}
+          <SearchInput 
+            searchTerm={searchTerm} 
+            setSearchTerm={setSearchTerm} 
+          />
         </div>
 
-        {/* NAVBAR-RIGHT */}
         <div className="NAVBARLIN">
           <div className="corsinkagrup">
             <MdOutlineShoppingCart className="corzinka" />
@@ -49,6 +62,15 @@ const Header = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal Component */}
+      {isModalOpen && (
+        <Modal closeModal={toggleModal}> {/* Passing function to close modal */}
+          <h2 className="text-lg font-bold">Tovarlar Katalogi</h2>
+          <p>Bu yerda tovarlarning katalogi bo'ladi.</p>
+          {/* You can add more content here */}
+        </Modal>
+      )}
     </div>
   );
 };

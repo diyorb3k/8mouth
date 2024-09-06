@@ -12,7 +12,7 @@
      <div className="datapro">
        <div className="product-card">
         <div className="product-image">
-          <img src={product.image} alt={product.title} />
+          <img src={product.images} alt={product.title} />
         </div>
         <div className="product-details">
           <h2 className="product-title">{product.title}</h2>

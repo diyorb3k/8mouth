@@ -1,51 +1,58 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import '../App.scss/Productlist/productlist.scss';
 import { ProductType } from "@/types/product.types";
-import ProductCard from './ProductCard'; // ProductCard komponentini import qilish
-import { log } from 'console';
-const ProductList = () => {
+import ProductCard from './ProductCard'; 
+import '../App.scss/Productlist/productlist.scss';
+
+interface ProductListProps {
+  searchTerm: string;
+  setSearchTerm: (term: string) => void;
+}
+
+const ProductList: React.FC<ProductListProps> = ({ searchTerm }) => {
   const [products, setProducts] = useState<ProductType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-// limn
 
-
-
-
-// limk
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('https://fakestoreapi.com/products'); // API manzilingiz
+        const response = await fetch('https://dummyjson.com/products');
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error('Failed to fetch products');
         }
-        const data: ProductType[] = await response.json();
-        setProducts(data);
-      } catch (error :any) {
+        const data = await response.json();
+        setProducts(data.products); // Get the products array
+      } catch (error: any) {
         setError(error.message);
       } finally {
         setLoading(false);
       }
     };
-  
 
     fetchProducts();
   }, []);
-  // console.log(salom);
-  
+
+  const filteredProducts = products.filter((product) =>
+    searchTerm && product.title
+      ? product.title.toLowerCase().includes(searchTerm.toLowerCase())
+      : true
+  );
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
     <div className="container">
-     <div className='cartlar'>
-     {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
-     </div>
+      <div className="cartlar">
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))
+        ) : (
+          <div>No products found</div>
+        )}
+      </div>
     </div>
   );
 };
